@@ -13,41 +13,22 @@ class Main {
 
 package ユーザーインタフェース層 <<Folder>> {
  勤怠入力API -->  勤怠入力リクエスト
- 勤怠入力リクエスト -->  Form
 
 class 勤怠入力API {
   -private 勤怠入力リクエスト
-  -private 勤怠入力サービス
-  void 勤怠入力(勤務日付,開始時刻,終了時刻)
+  void 勤怠入力(勤怠入力リクエスト)
  }
 class 勤怠入力リクエスト {
-  -private 勤務日付Form
-  -private 開始時刻Form
-  -private 終了時刻Form
-  +boolean isYyyyMMddFormat()
-  +boolean isYyyyMMddHHmmFormat()
-  +boolean isEmpty()
+  -private string arg1
+  -private string arg2
+  -private string arg3
+  +勤怠入力 create()
  }
  class 勤怠集計API {
    -private 勤怠集計サービス
    List 勤怠集計()
   }
 
-package Form <<Folder>> {
-
-class 勤務日付Form {
-  -private String input
-  勤務日付 getValueObject(return new DateParser.parse_yyyyMMdd())
- }
- class 開始時刻Form {
-   -private String input
-   開始時刻 getValueObject(return new DateParser.parse_yyyyMMddHHmm())
-  }
- class 終了時刻Form {
-   -private String input
-   終了時刻 getValueObject(return new DateParser.parse_yyyyMMddHHmm())
-  }
-}
 }
 
 
@@ -55,12 +36,7 @@ package アプリケーション層 <<Folder>> {
 class 勤怠入力サービス {
   -勤怠レポジトリー
   勤怠入力 create(勤務日付,開始時刻,終了時刻){ return new 勤怠入力(勤務日付,開始時刻,終了時刻)}
-  void 勤怠入力(勤務日付,開始時刻,終了時刻){ 勤怠レポジトリー.登録(勤怠入力)}
-
- }
-class 勤怠集計サービス {
-  -private 勤怠集計レポジトリー
-  List 勤怠集計(){ List<勤怠入力> 勤怠入力リスト = 勤怠集計レポジトリー.１ヶ月分集計(); return 勤怠入力リスト.勤怠集計して()}
+  void 勤怠入力(勤怠入力){ 勤怠レポジトリー.登録(勤怠入力)}
 
  }
 
