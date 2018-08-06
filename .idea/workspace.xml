@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e76f467-4cf8-4f14-847d-e10748be0e87" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9e76f467-4cf8-4f14-847d-e10748be0e87" name="Default" comment="" />
     <ignored path="kintai.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -67,7 +65,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-              <folding />
+              <folding>
+                <element signature="e#31713#31717#0" expanded="true" />
+                <element signature="e#31723#31727#0" expanded="true" />
+                <element signature="e#31806#31810#0" expanded="true" />
+                <element signature="e#31816#31820#0" expanded="true" />
+                <element signature="e#31833#31837#0" expanded="true" />
+                <element signature="e#31913#31917#0" expanded="true" />
+                <element signature="e#31923#31927#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -468,6 +474,7 @@
         <option value="$PROJECT_DIR$/src/main/java/domain/KintaiMonth.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/KaishiRepository.java" />
         <option value="$PROJECT_DIR$/doc/勤怠.puml" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -1191,12 +1198,12 @@
       <workItem from="1491820974577" duration="4388000" />
       <workItem from="1494907796609" duration="8690000" />
       <workItem from="1532661831763" duration="9183000" />
-      <workItem from="1533547278246" duration="9000" />
+      <workItem from="1533547278246" duration="137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22270000" />
+    <option name="totallyTimeSpent" value="22398000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1347,7 +1354,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="e#31713#31717#0" expanded="true" />
+            <element signature="e#31723#31727#0" expanded="true" />
+            <element signature="e#31806#31810#0" expanded="true" />
+            <element signature="e#31816#31820#0" expanded="true" />
+            <element signature="e#31833#31837#0" expanded="true" />
+            <element signature="e#31913#31917#0" expanded="true" />
+            <element signature="e#31923#31927#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1565,7 +1580,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="e#31713#31717#0" expanded="true" />
+            <element signature="e#31723#31727#0" expanded="true" />
+            <element signature="e#31806#31810#0" expanded="true" />
+            <element signature="e#31816#31820#0" expanded="true" />
+            <element signature="e#31833#31837#0" expanded="true" />
+            <element signature="e#31913#31917#0" expanded="true" />
+            <element signature="e#31923#31927#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
