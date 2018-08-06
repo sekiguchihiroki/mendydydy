@@ -1,22 +1,16 @@
 package domain;
 
-public class KintaiDayDataEntity {
+public class KintaiDayData {
 
-    private final KintaiId kintaiId;
     private final KintaiDay kintaiDay;
     private final KaishiZikan kaishiZikan;
     private final SyuryoZikan syuryoZikan;
 
 
-    public KintaiDayDataEntity(KintaiId kintaiId, KintaiDay kintaiDay, KaishiZikan kaishiZikan, SyuryoZikan syuryoZikan) {
-        this.kintaiId = kintaiId;
+    public KintaiDayData(KintaiDay kintaiDay, KaishiZikan kaishiZikan, SyuryoZikan syuryoZikan) {
         this.kintaiDay = kintaiDay;
         this.kaishiZikan = kaishiZikan;
         this.syuryoZikan = syuryoZikan;
-    }
-
-    public KintaiId getKintaiId() {
-        return kintaiId;
     }
 
     public KintaiDay getKintaiDay() {
@@ -30,6 +24,7 @@ public class KintaiDayDataEntity {
     public SyuryoZikan getSyuryoZikan() {
         return syuryoZikan;
     }
+
 
 
 }

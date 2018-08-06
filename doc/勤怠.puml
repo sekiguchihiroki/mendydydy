@@ -1,10 +1,5 @@
 @startuml
 
-Main --> ユーザーインタフェース層
-ユーザーインタフェース層 --> アプリケーション層
-アプリケーション層 --> レポジトリー層
-アプリケーション層 --> ドメイン層
-ユーザーインタフェース層 --> ドメイン層
 
 class Main {
   void 勤怠管理(String[] args)
@@ -13,60 +8,108 @@ class Main {
 }
 
 package ユーザーインタフェース層 <<Folder>> {
+ Main --> 勤怠入力API
  勤怠入力API -->  勤怠入力リクエスト
+ 勤怠入力リクエスト -->  勤怠日リクエスト
+ 勤怠入力リクエスト -->  開始時間リクエスト
+ 勤怠入力リクエスト -->  終了時間リクエスト
 
 class 勤怠入力API {
   -private 勤怠入力リクエスト
   void 勤怠入力(勤怠入力リクエスト)
  }
+
 class 勤怠入力リクエスト {
-  -private string arg1
-  -private string arg2
-  -private string arg3
-  +勤怠日毎データエンティティ create()
+  -private KintaiDayForm kintaiDayForm
+  -private KaishiZikanForm kaishiZikanForm
+  -private SyuryoZikanForm syuryoZikanForm
+  +勤怠日毎データ create()
+ }
+
+class 勤怠日リクエスト {
+  -private String value
+  KintaiDay getValueObject()
+ }
+
+class 開始時間リクエスト {
+  -private String value
+  KaishiZikan getValueObject()
+ }
+
+class 終了時間リクエスト {
+  -private String value
+  SyuryoZikan getValueObject()
  }
 
 }
 
 
 package アプリケーション層 <<Folder>> {
+勤怠入力API --> 勤怠入力サービス
 class 勤怠入力サービス {
+  -勤怠IDレポジトリー
   -勤怠レポジトリー
-  void 勤怠入力(勤怠入力){ 勤怠レポジトリー.登録(勤怠入力)}
+  void 登録(勤怠日毎データ){ }
 
  }
 
 }
 
 package ドメイン層 <<Folder>> {
-勤怠日毎データエンティテイ *-- 勤務日付
-勤怠日毎データエンティテイ *-- 開始時間
-勤怠日毎データエンティテイ *-- 終了時間
+  勤怠日毎データ *-- 勤務日付
+  勤怠日毎データ *-- 開始時間
+  勤怠日毎データ *-- 終了時間
+  勤怠入力リクエスト -->  勤怠日毎データ
+  勤怠入力サービス --> 勤怠日毎データテンティティファクトリー
 
-class 勤怠日毎データエンティテイ {
+
+class 勤怠日毎データテンティティファクトリー {
+  +勤怠日毎データテンティティ create(勤怠ID,勤怠日毎データ)
+
+}
+
+class 勤怠日毎データ {
   -勤怠日付
   -開始時間
   -終了時間
 }
 
+class 勤怠日毎データテンティティ {
+  -勤怠ID
+  -勤怠日付
+  -開始時間
+  -終了時間
+}
+
+class 勤怠ID {
+  -String
+ }
+
 class 勤務日付 {
-  -dateTime
+  -String
  }
 
 class 開始時間 {
-  -dateTime
+  -String
  }
 
 class 終了時間 {
-  -dateTime
+  -String
  }
 
 }
 
 package レポジトリー層 <<Folder>> {
-interface 勤怠レポジトリー
-勤怠レポジトリー : void 登録(勤怠入力)
+勤怠IDレポジトリー --> 勤怠ID
+勤怠日毎データテンティティファクトリー --> 勤怠日毎データテンティティ
+勤怠入力サービス --> 勤怠レポジトリー
 
+
+interface 勤怠レポジトリー
+勤怠レポジトリー : void 登録(勤怠日毎データテンティティ)
+
+interface 勤怠IDレポジトリー
+勤怠IDレポジトリー : 勤怠ID create()
 }
 
 @enduml

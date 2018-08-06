@@ -1,33 +1,35 @@
 package service;
 
+import domain.KintaiDayData;
 import domain.KintaiDayDataEntity;
+import domain.KintaiDayDataEntityFactory;
+import domain.KintaiId;
+import domain.KintaiIdRepository;
+import domain.KintaiRepository;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class KintaiRegisterService {
-    List<String> kintaiList = new ArrayList<>();
-
-    public void register(KintaiDayDataEntity kintaiDayDataEntity) {
-//ドメインオブジェクトを操作することで、ソフトウェアが果たすべき仕事を実現する層
-        String startTime = args[2];
-        String endTime = args[3];
-
-        //勤怠の登録
-        for (
-                String kintai : kintaiList)
-
-        {
-            if (kintai.equals(args[1])) {
-                //同じ日付だったら上書き
-                kintai = stringDate + "," + startTime + "," + endTime;
-            } else {
-                kintaiList.add(formatDate + "," + startTime + "," + endTime);
-            }
+    private KintaiIdRepository kintaiIdRepository = new KintaiIdRepository() {
+        @Override
+        public KintaiId create() {
+            return new KintaiId("1");
         }
-        kintaiDayDataEntity.printReformatKintaiDay();
-        System.out.println("開始時間" + Long.parseLong(startTime));
-        System.out.println("終了時間" + Long.parseLong(endTime));
+    };
+    private KintaiRepository kintaiRepository = new KintaiRepository() {
+        @Override
+        public void 登録(KintaiDayDataEntity kintaiDayDataEntity) {
 
+        }
+    };
+
+    public void register(KintaiDayData kintaiDayData) {
+        //ドメインオブジェクトを操作することで、ソフトウェアが果たすべき仕事を実現する
+        KintaiId kintaiId = kintaiIdRepository.create();
+
+        KintaiDayDataEntity kintaiDayDataEntity = KintaiDayDataEntityFactory.create(
+                kintaiId, kintaiDayData);
+
+
+        kintaiRepository.登録(kintaiDayDataEntity);
     }
 }

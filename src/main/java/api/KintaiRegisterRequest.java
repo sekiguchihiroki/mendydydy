@@ -1,20 +1,24 @@
 package api;
 
-import domain.KaishiZikan;
-import domain.KintaiDay;
-import domain.KintaiDayDataEntity;
-import domain.SyuryoZikan;
+import api.form.KaishiZikanForm;
+import api.form.KintaiDayForm;
+import api.form.SyuryoZikanForm;
+import domain.KintaiDayData;
 
 public class KintaiRegisterRequest {
 
-    String arg1;
-    String arg2;
-    String arg3;
+    private KintaiDayForm kintaiDayForm;
+    private KaishiZikanForm kaishiZikanForm;
+    private SyuryoZikanForm syuryoZikanForm;
 
     public KintaiRegisterRequest(String arg1, String arg2, String arg3) {
+        kintaiDayForm = new KintaiDayForm(arg1);
+        kaishiZikanForm = new KaishiZikanForm(arg2);
+        syuryoZikanForm = new SyuryoZikanForm(arg3);
+
     }
 
-    public KintaiDayDataEntity create() {
-        return new KintaiDayDataEntity(new KintaiDay(arg1), new KaishiZikan(arg2), new SyuryoZikan(arg3));
+    public KintaiDayData create() {
+        return new KintaiDayData(kintaiDayForm.getValueObject(), kaishiZikanForm.getValueObject(), syuryoZikanForm.getValueObject());
     }
 }
