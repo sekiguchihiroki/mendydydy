@@ -1,4 +1,4 @@
-package service;
+package service.kintai_kousin;
 
 import domain.kintai_kousin.KintaiDayData;
 import domain.kintai_kousin.KintaiDayDataEntity;

@@ -1,8 +1,8 @@
-package api;
+package api.kintai_kousin;
 
-import api.form.KaishiZikanForm;
-import api.form.KintaiDayForm;
-import api.form.SyuryoZikanForm;
+import api.kintai_kousin.form.KaishiZikanForm;
+import api.kintai_kousin.form.KintaiDayForm;
+import api.kintai_kousin.form.SyuryoZikanForm;
 import domain.kintai_kousin.KintaiDayData;
 
 public class KintaiRegisterRequest {

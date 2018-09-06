@@ -1,4 +1,4 @@
-package api.form;
+package api.kintai_kousin.form;
 
 import domain.kintai_kousin.KintaiDay;
 

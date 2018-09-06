@@ -1,5 +1,5 @@
-import api.KintaiRegisterApi;
-import api.KintaiRegisterRequest;
+import api.kintai_kousin.KintaiRegisterApi;
+import api.kintai_kousin.KintaiRegisterRequest;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

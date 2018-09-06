@@ -1,7 +1,7 @@
-package api;
+package api.kintai_kousin;
 
 
-import service.KintaiRegisterService;
+import service.kintai_kousin.KintaiRegisterService;
 
 public class KintaiRegisterApi {
 //ユーザとの相互作用の境界となる層　IF層
