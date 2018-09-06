@@ -1,6 +1,6 @@
 package api.form;
 
-import domain.KaishiZikan;
+import domain.kintai_kousin.KaishiZikan;
 
 public class KaishiZikanForm {
     private String value;

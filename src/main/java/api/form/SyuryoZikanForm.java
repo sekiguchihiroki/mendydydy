@@ -1,6 +1,6 @@
 package api.form;
 
-import domain.SyuryoZikan;
+import domain.kintai_kousin.SyuryoZikan;
 
 public class SyuryoZikanForm {
     private String value;

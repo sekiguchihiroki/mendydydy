@@ -1,4 +1,4 @@
-package domain;
+package domain.kintai_kousin;
 
 public class KintaiDayDataEntityFactory {
 

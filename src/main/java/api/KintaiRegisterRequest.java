@@ -3,7 +3,7 @@ package api;
 import api.form.KaishiZikanForm;
 import api.form.KintaiDayForm;
 import api.form.SyuryoZikanForm;
-import domain.KintaiDayData;
+import domain.kintai_kousin.KintaiDayData;
 
 public class KintaiRegisterRequest {
 

@@ -1,35 +1,35 @@
 package service;
 
-import domain.KintaiDayData;
-import domain.KintaiDayDataEntity;
-import domain.KintaiDayDataEntityFactory;
-import domain.KintaiId;
-import domain.KintaiIdRepository;
-import domain.KintaiRepository;
+import domain.kintai_kousin.KintaiDayData;
+import domain.kintai_kousin.KintaiDayDataEntity;
+import domain.kintai_kousin.KintaiDayDataEntityFactory;
+import domain.kintai_kousin.KintaiId;
+import domain.kintai_kousin.KintaiRepository;
 
 
-public class KintaiRegisterService {
-    private KintaiIdRepository kintaiIdRepository = new KintaiIdRepository() {
-        @Override
-        public KintaiId create() {
-            return new KintaiId("1");
-        }
-    };
-    private KintaiRepository kintaiRepository = new KintaiRepository() {
-        @Override
-        public void 登録(KintaiDayDataEntity kintaiDayDataEntity) {
-
-        }
-    };
+public class KintaiRegisterService implements KintaiRepository {
+    private KintaiRepository kintaiRepository = new KintaiRepository();
 
     public void register(KintaiDayData kintaiDayData) {
+
         //ドメインオブジェクトを操作することで、ソフトウェアが果たすべき仕事を実現する
-        KintaiId kintaiId = kintaiIdRepository.create();
+        KintaiId kintaiId = kintaiRepository.create();
 
         KintaiDayDataEntity kintaiDayDataEntity = KintaiDayDataEntityFactory.create(
                 kintaiId, kintaiDayData);
 
-
         kintaiRepository.登録(kintaiDayDataEntity);
+
+    }
+
+    @Override
+    public KintaiId create() {
+        return new KintaiId("1");
+    }
+
+    @Override
+    public void 登録(KintaiDayDataEntity kintaiDayDataEntity) {
+
     }
 }
+

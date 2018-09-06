@@ -1,6 +1,6 @@
 package api.form;
 
-import domain.KintaiDay;
+import domain.kintai_kousin.KintaiDay;
 
 public class KintaiDayForm {
     private String value;
